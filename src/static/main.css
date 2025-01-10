@@ -1,0 +1,131 @@
+/* Fuente y estilos generales */
+@font-face {
+  font-family: 'Evogria';
+  src: url('../fonts/Evogria.otf') format('truetype');
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Estilos del header */
+header {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent; /* Fondo transparente para que se vea la imagen */
+  position: relative; /* Permite superponer elementos */
+  z-index: 2;
+  padding: 0 40px;
+  z-index: 300;
+}
+
+.logo_img {
+  width: 90px;
+  height: 100px;
+}
+
+.menu-icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Menú pantalla completa */
+#fullscreen-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/navbarimg.png");
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 200; /* Para estar encima de todo */
+  transition: all 2.2s;
+}
+
+#fullscreen-menu ul {
+  list-style: none;
+  text-align: center;
+}
+
+#fullscreen-menu ul li {
+  margin: 20px 0;
+  font-family: 'Evogria', sans-serif;
+  font-size: 2.4rem; /* Ajusta el tamaño del texto */
+}
+
+#fullscreen-menu.hidden {
+  display: none;
+}
+
+/* Estilos para la imagen principal y el texto */
+.title {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Alinea los elementos verticalmente */
+}
+
+.img_title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.title h1, .title h3 {
+  padding: 0;
+  margin: 0;
+  font-family: 'Evogria', sans-serif;
+  text-align: center;
+  z-index: 1; /* Asegura que el texto esté sobre la imagen */
+}
+
+.title h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 8.4rem;
+  color: #FB9C00;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  top: 0;
+}
+
+.title h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 4.4rem;
+  color: #FBB900;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

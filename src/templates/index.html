@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Pantalla Completa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo_img">
+        </div>
+        <div class="menu-icon-container">
+            <img id="menu-icon" src="{{ url_for('static', filename='images/lines.svg') }}" alt="Menú" class="menu-icon">
+        </div>
+    </header>
+    <main>
+        <div class="title">
+            <img id="main-image" src="{{ url_for('static', filename='images/homeimg.png') }}" alt="Scouting Image" class="img_title">
+            <h1>Scouting</h1>
+            <h3>tigres 6652</h3>
+        </div>
+    </main>
+    
+    <nav id="fullscreen-menu" class="hidden">
+        <ul>
+            <li><a href="{{ url_for('pit_scouting') }}">Pit Scouting</a></li>
+            <li><a href="{{ url_for('match_scouting') }}">Match Scouting</a></li>
+            <li><a href="{{ url_for('strategy_scouting') }}">Strategy</a></li>
+            <li><a href="{{ url_for('info_teams') }}">Info Equipos</a></li>
+            <li><button>Cerrar Sesión</button></li>
+        </ul>
+    </nav>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+
+
+</html>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+
+
+<!-- 
+<div class="hola">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw on Default Image</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Draw on Default Image</h1>
+    <canvas id="canvas"></canvas>
+    <br>
+    <button id="saveBtn">Save Image</button>
+    <a href="/images">View Images</a>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+
+        // Cargar la imagen predeterminada
+        function loadDefaultImage() {
+            const img = new Image();
+            img.src = 'static/a.png';  // Ruta a tu imagen predeterminada
+            img.onload = () => {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);  // Dibujar imagen en el canvas
+            };
+        }
+
+        // Llama a la función para cargar la imagen predeterminada
+        loadDefaultImage();
+
+        // Manejo del dibujo en el canvas
+        canvas.onmousedown = () => {
+            isDrawing = true;
+            ctx.beginPath();
+        };
+
+        canvas.onmousemove = (e) => {
+            if (isDrawing) {
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
+            }
+        };
+
+        canvas.onmouseup = () => {
+            isDrawing = false;
+        };
+
+        document.getElementById('saveBtn').onclick = () => {
+            const dataURL = canvas.toDataURL('image/png');  // Convertir canvas a imagen
+            fetch(`/save_drawn_image`, {  // Guardar la imagen sin ID
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ image: dataURL })  // Enviar imagen al servidor
+            }).then(response => {
+                if (response.ok) {
+                    alert('Image saved successfully!');
+                } else {
+                    alert('Error saving image.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        };
+    </script>
+</body>
+</html>
+
+</div> -->

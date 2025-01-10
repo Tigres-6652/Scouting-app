@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        img {
+            max-width: 300px;  /* Ajusta el tamaño de las imágenes como desees */
+            margin: 10px;
+            border: 1px solid #ccc;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;  /* Para que las imágenes se ajusten en varias filas */
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="gallery">
+        {% for image in images %}
+            <div>
+                <h3>{{ image.Name }}</h3>
+                <img src="/image/{{ image.Id }}" alt="{{ image.Name }}">
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
